@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title> List command git </title>
+</head>
+<style>
+    body{
+        margin: 0%;
+        padding: 2%;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    table{
+        width: 95vw;
+        height: max-content;
+        border: 1px solid black;
+    }
+    th{
+        width: 45vw;
+        text-align: center;
+        border: 1px solid black;
+        border-left: none;
+    }
+    td{
+        width: 45vw;
+        text-align: center;
+        border: 1px solid black;
+        border-left: none;
+    }
+    h3{
+        width: 40vw;
+        color: rgb(0, 91, 91);
+    }
+    code{
+        background-color: gainsboro;
+        padding-left: 1%;
+        padding-right: 1%;
+        border-radius: 5px;
+    }
+    table tbody tr td:nth-child(2){
+        text-align: start;
+        padding-left: 1%;
+    }
+</style>
+<body>
+    <h3> Tell Git who you are </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Configure the author name.</td>
+      <td><code>git config --global user.name "&lt;username&gt;"</code></td>
+      </tr>
+      <tr>
+      <td>Configure the author email address.</td>
+      <td><code>git config --global user.email &lt;email address&gt;</code></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <!--  -->
+      
+      <h3> Getting &amp; Creating Projects </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Initialize a local Git repository</td>
+      <td><code>git init</code></td>
+      </tr>
+      <tr>
+      <td>Create a local copy of a remote repository</td>
+      <td><code>git clone ssh://git@github.com/&lt;username&gt;/&lt;repository-name&gt;.git</code></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <!--  -->
+      
+      <h3> Basic Snapshotting </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Check status</td>
+      <td><code>git status</code></td>
+      </tr>
+      <tr>
+      <td>Add a file to the staging area</td>
+      <td><code>git add &lt;file-name.txt&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Add all new and changed files to the staging area</td>
+      <td>
+      <code>git add -A</code> or <code>git add .</code>
+      </td>
+      </tr>
+      <tr>
+      <td>Commit changes</td>
+      <td><code>git commit -m "&lt;commit message&gt;"</code></td>
+      </tr>
+      <tr>
+      <td>Remove a file (or folder)</td>
+      <td><code>git rm -r &lt;file-name.txt&gt;</code></td>
+      </tr>
+      </tbody>
+      </table>
+      
+      <!--  -->
+
+      <h3> Inspection &amp; Comparison </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>View changes</td>
+      <td><code>git log</code></td>
+      </tr>
+      <tr>
+      <td>View changes (detailed)</td>
+      <td><code>git log --summary</code></td>
+      </tr>
+      <tr>
+      <td>View changes in one line (briefly)</td>
+      <td>
+      <code>git log --oneline</code> or <br> <code>git log --pretty=oneline</code> or<br> <code>git log --pretty=short</code>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+
+      <!--  -->
+      
+      <h3> Undo to previous file </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>List of all commit with commit id and commit message)</td>
+      <td><code>git log --oneline</code></td>
+      </tr>
+      <tr>
+      <td>Return to previous commit </td>
+      <td><code>git checkout&lt;commit id&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Revert commit  (undo one particular commit)</td>
+      <td><code>git revert &lt;commit id&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Reset to previous commit  (remove history of all commit after  )</td>
+      <td><code>git reset &lt;commit id&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Stop a file being tracked</td>
+      <td><code>git rm --cached &lt;file/folder&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Restore a file to a previous commit</td>
+      <td><code>git checkout &lt;file/to/restore&gt;</code></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <!--  -->
+      
+      <h3> Branching &amp; Merging </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>List branches (the asterisk denotes the current branch)</td>
+      <td><code>git branch</code></td>
+      </tr>
+      <tr>
+      <td>List all branches (local and remote)</td>
+      <td><code>git branch -a</code></td>
+      </tr>
+      <tr>
+      <td>Create a new branch</td>
+      <td><code>git branch &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Create a new branch and switch to it</td>
+      <td><code>git checkout -b &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Clone a remote branch and switch to it</td>
+      <td><code>git checkout -b &lt;branch name&gt; origin/&lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Rename a local branch</td>
+      <td><code>git branch -m &lt;old branch name&gt; &lt;new branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Switch to a branch</td>
+      <td><code>git checkout &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Switch to the branch last checked out</td>
+      <td><code>git checkout -</code></td>
+      </tr>
+      <tr>
+      <td>Discard changes to a file</td>
+      <td><code>git checkout -- &lt;file-name.txt&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Delete a branch</td>
+      <td><code>git branch -d &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Delete a remote branch</td>
+      <td><code>git push origin --delete &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Preview changes before merging</td>
+      <td><code>git diff &lt;source branch&gt;  &lt;target branch&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Merge a branch into the active branch</td>
+      <td><code>git merge &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Merge a branch into a target branch</td>
+      <td><code>git merge &lt;source branch&gt; &lt;target branch&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Stash changes in a dirty working directory</td>
+      <td><code>git stash</code></td>
+      </tr>
+      <tr>
+      <td>Remove all stashed entries</td>
+      <td><code>git stash clear</code></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <!--  -->
+      
+      <h3> Sharing &amp; Updating Projects </h3>
+      
+      <table>
+      <thead>
+      <tr>
+      <th>Description</th>
+      <th>Command</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Push a branch to your remote repository</td>
+      <td><code>git push origin &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Push changes to remote repository (and remember the branch)</td>
+      <td><code>git push -u origin &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Push changes to remote repository (remembered branch)</td>
+      <td><code>git push</code></td>
+      </tr>
+      <tr>
+      <td>Delete a remote branch</td>
+      <td><code>git push origin --delete &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Update local repository to the newest commit</td>
+      <td><code>git pull</code></td>
+      </tr>
+      <tr>
+      <td>Pull changes from remote repository</td>
+      <td><code>git pull origin &lt;branch name&gt;</code></td>
+      </tr>
+      <tr>
+      <td>Add a remote repository</td>
+      <td><code>git remote add origin ssh://git@github.com/&lt;username&gt;/&lt;repository-name&gt;.git</code></td>
+      </tr>
+      <tr>
+      <td>Set a repository's origin branch to SSH</td>
+      <td><code>git remote set-url origin ssh://git@github.com/&lt;username&gt;/&lt;repository-name&gt;.git</code></td>
+      </tr>
+      </tbody>
+      </table>
+</body>
+</html>
